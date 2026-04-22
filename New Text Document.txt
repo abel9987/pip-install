@@ -15,3 +15,12 @@ kubectl:
 winget install Kubernetes.kubectl
 Minikube:
 winget install Kubernetes.minikube
+
+
+
+
+from nothing_newtest import DevOpsExperiments
+
+obj=DevOpsExperiments()
+
+print(obj.exp5())
