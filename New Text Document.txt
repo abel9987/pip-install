@@ -24,3 +24,8 @@ from nothing_newtest import DevOpsExperiments
 obj=DevOpsExperiments()
 
 print(obj.exp5())
+
+
+
+pip uninstall  nothing-newtest
+pip cache  purge
