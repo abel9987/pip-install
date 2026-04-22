@@ -1,0 +1,56 @@
+06
+Use kubectl commands to create, scale, and manage Kubernetes resources like pods and deployments.
+Kubernetes
+kubectl
+Step 1 – Create a deployment
+bash
+copy
+kubectl create deployment myapp --image=nginx:latest
+kubectl get deployments
+kubectl get pods
+Step 2 – Scale the deployment
+bash
+copy
+# Scale up to 3 replicas
+kubectl scale deployment myapp --replicas=3
+kubectl get pods
+
+# Scale back down
+kubectl scale deployment myapp --replicas=1
+Step 3 – Expose, inspect & clean up
+bash
+copy
+kubectl expose deployment myapp --port=80 --type=NodePort
+kubectl get services
+kubectl describe pod <pod-name>
+kubectl logs <pod-name>
+
+# Clean up
+kubectl delete deployment myapp
+kubectl delete service myapp
+Step 4 – Using a YAML manifest (deployment.yaml)
+yaml
+copy
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: myapp
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+bash
+copy
+kubectl apply -f deployment.yaml
+kubectl get all
