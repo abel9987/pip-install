@@ -29,3 +29,10 @@ print(obj.exp5())
 
 pip uninstall  nothing-newtest
 pip cache  purge
+
+
+
+
+
+docker pull abel9987/app5:latest
+docker run -p 1000:1000 abel9987/app5:latest
