@@ -1,0 +1,17 @@
+pip install flask
+pip install requests
+pip install pytest
+
+pip install nothing-newtest
+
+
+
+
+
+Your exact commands
+Python:
+winget install Python.Python.3.10
+kubectl:
+winget install Kubernetes.kubectl
+Minikube:
+winget install Kubernetes.minikube
